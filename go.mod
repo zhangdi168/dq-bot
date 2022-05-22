@@ -1,4 +1,4 @@
-module github.com/xinliangnote/go-gin-api
+module github.com/zhangdi168/dq-bot
 
 go 1.16
 

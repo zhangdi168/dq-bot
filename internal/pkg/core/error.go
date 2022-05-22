@@ -1,7 +1,7 @@
 package core
 
 import (
-	"github.com/xinliangnote/go-gin-api/pkg/errors"
+	"github.com/zhangdi168/dq-bot/pkg/errors"
 )
 
 var _ BusinessError = (*businessError)(nil)

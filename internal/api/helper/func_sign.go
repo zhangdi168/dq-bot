@@ -5,11 +5,11 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/xinliangnote/go-gin-api/configs"
-	"github.com/xinliangnote/go-gin-api/internal/code"
-	"github.com/xinliangnote/go-gin-api/internal/pkg/core"
-	"github.com/xinliangnote/go-gin-api/pkg/errors"
-	"github.com/xinliangnote/go-gin-api/pkg/signature"
+	"github.com/zhangdi168/dq-bot/configs"
+	"github.com/zhangdi168/dq-bot/internal/code"
+	"github.com/zhangdi168/dq-bot/internal/pkg/core"
+	"github.com/zhangdi168/dq-bot/pkg/errors"
+	"github.com/zhangdi168/dq-bot/pkg/signature"
 )
 
 type signRequest struct {

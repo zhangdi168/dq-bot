@@ -3,10 +3,10 @@ package resolvers
 import (
 	"context"
 
-	"github.com/xinliangnote/go-gin-api/internal/graph/generated"
-	"github.com/xinliangnote/go-gin-api/internal/pkg/core"
-	"github.com/xinliangnote/go-gin-api/internal/repository/mysql"
-	"github.com/xinliangnote/go-gin-api/internal/repository/redis"
+	"github.com/zhangdi168/dq-bot/internal/graph/generated"
+	"github.com/zhangdi168/dq-bot/internal/pkg/core"
+	"github.com/zhangdi168/dq-bot/internal/repository/mysql"
+	"github.com/zhangdi168/dq-bot/internal/repository/redis"
 
 	"go.uber.org/zap"
 )

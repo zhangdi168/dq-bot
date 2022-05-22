@@ -3,10 +3,10 @@ package cron
 import (
 	"net/http"
 
-	"github.com/xinliangnote/go-gin-api/internal/code"
-	"github.com/xinliangnote/go-gin-api/internal/pkg/core"
-	"github.com/xinliangnote/go-gin-api/internal/pkg/validation"
-	"github.com/xinliangnote/go-gin-api/internal/services/cron"
+	"github.com/zhangdi168/dq-bot/internal/code"
+	"github.com/zhangdi168/dq-bot/internal/pkg/core"
+	"github.com/zhangdi168/dq-bot/internal/pkg/validation"
+	"github.com/zhangdi168/dq-bot/internal/services/cron"
 )
 
 type createRequest struct {

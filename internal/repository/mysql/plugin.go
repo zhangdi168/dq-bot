@@ -3,9 +3,9 @@ package mysql
 import (
 	"time"
 
-	"github.com/xinliangnote/go-gin-api/internal/pkg/core"
-	"github.com/xinliangnote/go-gin-api/pkg/timeutil"
-	"github.com/xinliangnote/go-gin-api/pkg/trace"
+	"github.com/zhangdi168/dq-bot/internal/pkg/core"
+	"github.com/zhangdi168/dq-bot/pkg/timeutil"
+	"github.com/zhangdi168/dq-bot/pkg/trace"
 
 	"gorm.io/gorm"
 	"gorm.io/gorm/utils"

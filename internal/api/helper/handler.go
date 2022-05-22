@@ -1,10 +1,10 @@
 package helper
 
 import (
-	"github.com/xinliangnote/go-gin-api/internal/pkg/core"
-	"github.com/xinliangnote/go-gin-api/internal/repository/mysql"
-	"github.com/xinliangnote/go-gin-api/internal/repository/redis"
-	"github.com/xinliangnote/go-gin-api/internal/services/authorized"
+	"github.com/zhangdi168/dq-bot/internal/pkg/core"
+	"github.com/zhangdi168/dq-bot/internal/repository/mysql"
+	"github.com/zhangdi168/dq-bot/internal/repository/redis"
+	"github.com/zhangdi168/dq-bot/internal/services/authorized"
 
 	"go.uber.org/zap"
 )

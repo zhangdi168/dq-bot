@@ -1,14 +1,14 @@
 package router
 
 import (
-	"github.com/xinliangnote/go-gin-api/internal/api/admin"
-	"github.com/xinliangnote/go-gin-api/internal/api/authorized"
-	"github.com/xinliangnote/go-gin-api/internal/api/config"
-	"github.com/xinliangnote/go-gin-api/internal/api/cron"
-	"github.com/xinliangnote/go-gin-api/internal/api/helper"
-	"github.com/xinliangnote/go-gin-api/internal/api/menu"
-	"github.com/xinliangnote/go-gin-api/internal/api/tool"
-	"github.com/xinliangnote/go-gin-api/internal/pkg/core"
+	"github.com/zhangdi168/dq-bot/internal/api/admin"
+	"github.com/zhangdi168/dq-bot/internal/api/authorized"
+	"github.com/zhangdi168/dq-bot/internal/api/config"
+	"github.com/zhangdi168/dq-bot/internal/api/cron"
+	"github.com/zhangdi168/dq-bot/internal/api/helper"
+	"github.com/zhangdi168/dq-bot/internal/api/menu"
+	"github.com/zhangdi168/dq-bot/internal/api/tool"
+	"github.com/zhangdi168/dq-bot/internal/pkg/core"
 )
 
 func setApiRouter(r *resource) {

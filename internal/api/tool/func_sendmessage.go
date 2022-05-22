@@ -4,11 +4,11 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/xinliangnote/go-gin-api/internal/code"
-	"github.com/xinliangnote/go-gin-api/internal/pkg/core"
-	"github.com/xinliangnote/go-gin-api/internal/pkg/validation"
-	"github.com/xinliangnote/go-gin-api/internal/websocket/sysmessage"
-	"github.com/xinliangnote/go-gin-api/pkg/timeutil"
+	"github.com/zhangdi168/dq-bot/internal/code"
+	"github.com/zhangdi168/dq-bot/internal/pkg/core"
+	"github.com/zhangdi168/dq-bot/internal/pkg/validation"
+	"github.com/zhangdi168/dq-bot/internal/websocket/sysmessage"
+	"github.com/zhangdi168/dq-bot/pkg/timeutil"
 )
 
 type sendMessageRequest struct {

@@ -3,9 +3,9 @@ package authorized
 import (
 	"net/http"
 
-	"github.com/xinliangnote/go-gin-api/internal/code"
-	"github.com/xinliangnote/go-gin-api/internal/pkg/core"
-	"github.com/xinliangnote/go-gin-api/internal/services/authorized"
+	"github.com/zhangdi168/dq-bot/internal/code"
+	"github.com/zhangdi168/dq-bot/internal/pkg/core"
+	"github.com/zhangdi168/dq-bot/internal/services/authorized"
 )
 
 type createRequest struct {

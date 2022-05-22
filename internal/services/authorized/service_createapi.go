@@ -1,10 +1,10 @@
 package authorized
 
 import (
-	"github.com/xinliangnote/go-gin-api/configs"
-	"github.com/xinliangnote/go-gin-api/internal/pkg/core"
-	"github.com/xinliangnote/go-gin-api/internal/repository/mysql/authorized_api"
-	"github.com/xinliangnote/go-gin-api/internal/repository/redis"
+	"github.com/zhangdi168/dq-bot/configs"
+	"github.com/zhangdi168/dq-bot/internal/pkg/core"
+	"github.com/zhangdi168/dq-bot/internal/repository/mysql/authorized_api"
+	"github.com/zhangdi168/dq-bot/internal/repository/redis"
 )
 
 type CreateAuthorizedAPIData struct {

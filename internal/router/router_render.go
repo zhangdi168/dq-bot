@@ -1,17 +1,17 @@
 package router
 
 import (
-	"github.com/xinliangnote/go-gin-api/internal/pkg/core"
-	"github.com/xinliangnote/go-gin-api/internal/render/admin"
-	"github.com/xinliangnote/go-gin-api/internal/render/authorized"
-	"github.com/xinliangnote/go-gin-api/internal/render/config"
-	"github.com/xinliangnote/go-gin-api/internal/render/cron"
-	"github.com/xinliangnote/go-gin-api/internal/render/dashboard"
-	"github.com/xinliangnote/go-gin-api/internal/render/generator"
-	"github.com/xinliangnote/go-gin-api/internal/render/index"
-	"github.com/xinliangnote/go-gin-api/internal/render/install"
-	"github.com/xinliangnote/go-gin-api/internal/render/tool"
-	"github.com/xinliangnote/go-gin-api/internal/render/upgrade"
+	"github.com/zhangdi168/dq-bot/internal/pkg/core"
+	"github.com/zhangdi168/dq-bot/internal/render/admin"
+	"github.com/zhangdi168/dq-bot/internal/render/authorized"
+	"github.com/zhangdi168/dq-bot/internal/render/config"
+	"github.com/zhangdi168/dq-bot/internal/render/cron"
+	"github.com/zhangdi168/dq-bot/internal/render/dashboard"
+	generatorhandler "github.com/zhangdi168/dq-bot/internal/render/generator"
+	"github.com/zhangdi168/dq-bot/internal/render/index"
+	"github.com/zhangdi168/dq-bot/internal/render/install"
+	"github.com/zhangdi168/dq-bot/internal/render/tool"
+	"github.com/zhangdi168/dq-bot/internal/render/upgrade"
 )
 
 func setRenderRouter(r *resource) {
@@ -19,7 +19,7 @@ func setRenderRouter(r *resource) {
 	renderInstall := install.New(r.logger)
 	renderIndex := index.New(r.logger, r.db, r.cache)
 	renderDashboard := dashboard.New(r.logger, r.db, r.cache)
-	renderGenerator := generator_handler.New(r.logger, r.db, r.cache)
+	renderGenerator := generatorhandler.New(r.logger, r.db, r.cache)
 	renderConfig := config.New(r.logger, r.db, r.cache)
 	renderAuthorized := authorized.New(r.logger, r.db, r.cache)
 	renderTool := tool.New(r.logger, r.db, r.cache)

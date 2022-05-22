@@ -1,11 +1,11 @@
 package menu
 
 import (
-	"github.com/xinliangnote/go-gin-api/internal/pkg/core"
-	"github.com/xinliangnote/go-gin-api/internal/repository/mysql"
-	"github.com/xinliangnote/go-gin-api/internal/repository/mysql/menu"
-	"github.com/xinliangnote/go-gin-api/internal/repository/mysql/menu_action"
-	"github.com/xinliangnote/go-gin-api/internal/repository/redis"
+	"github.com/zhangdi168/dq-bot/internal/pkg/core"
+	"github.com/zhangdi168/dq-bot/internal/repository/mysql"
+	"github.com/zhangdi168/dq-bot/internal/repository/mysql/menu"
+	"github.com/zhangdi168/dq-bot/internal/repository/mysql/menu_action"
+	"github.com/zhangdi168/dq-bot/internal/repository/redis"
 )
 
 var _ Service = (*service)(nil)

@@ -5,8 +5,8 @@ import (
 	"encoding/hex"
 	"io"
 
-	"github.com/xinliangnote/go-gin-api/internal/pkg/core"
-	"github.com/xinliangnote/go-gin-api/internal/repository/mysql/authorized"
+	"github.com/zhangdi168/dq-bot/internal/pkg/core"
+	"github.com/zhangdi168/dq-bot/internal/repository/mysql/authorized"
 )
 
 type CreateAuthorizedData struct {

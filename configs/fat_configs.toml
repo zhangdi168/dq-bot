@@ -22,15 +22,15 @@
 
   [mysql.read]
     addr = "127.0.0.1:3306"
-    name = "go_gin_api"
-    pass = "123456789"
-    user = "root"
+    name = "dqbot168"
+    pass = "dqbot168"
+    user = "dqbot168"
 
   [mysql.write]
     addr = "127.0.0.1:3306"
-    name = "go_gin_api"
-    pass = "123456789"
-    user = "root"
+    name = "dqbot168"
+    pass = "dqbot168"
+    user = "dqbot168"
 
 [redis]
   addr = "127.0.0.1:6379"

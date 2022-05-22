@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/xinliangnote/go-gin-api/internal/repository/mysql"
-	"github.com/xinliangnote/go-gin-api/internal/repository/mysql/cron_task"
+	"github.com/zhangdi168/dq-bot/internal/repository/mysql"
+	"github.com/zhangdi168/dq-bot/internal/repository/mysql/cron_task"
 
 	"go.uber.org/zap"
 )

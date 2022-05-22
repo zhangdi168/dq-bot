@@ -3,7 +3,7 @@ package code
 import (
 	_ "embed"
 
-	"github.com/xinliangnote/go-gin-api/configs"
+	"github.com/zhangdi168/dq-bot/configs"
 )
 
 //go:embed code.go

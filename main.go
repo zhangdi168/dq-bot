@@ -3,15 +3,14 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/zhangdi168/dq-bot/configs"
+	"github.com/zhangdi168/dq-bot/internal/router"
+	"github.com/zhangdi168/dq-bot/pkg/env"
+	"github.com/zhangdi168/dq-bot/pkg/logger"
+	"github.com/zhangdi168/dq-bot/pkg/shutdown"
+	"github.com/zhangdi168/dq-bot/pkg/timeutil"
 	"net/http"
 	"time"
-
-	"github.com/xinliangnote/go-gin-api/configs"
-	"github.com/xinliangnote/go-gin-api/internal/router"
-	"github.com/xinliangnote/go-gin-api/pkg/env"
-	"github.com/xinliangnote/go-gin-api/pkg/logger"
-	"github.com/xinliangnote/go-gin-api/pkg/shutdown"
-	"github.com/xinliangnote/go-gin-api/pkg/timeutil"
 
 	"go.uber.org/zap"
 )
@@ -25,7 +24,7 @@ import (
 // @contact.email
 
 // @license.name MIT
-// @license.url https://github.com/xinliangnote/go-gin-api/blob/master/LICENSE
+// @license.url https://github.com/zhangdi168/dq-bot/blob/master/LICENSE
 
 // @securityDefinitions.apikey  LoginToken
 // @in                          header

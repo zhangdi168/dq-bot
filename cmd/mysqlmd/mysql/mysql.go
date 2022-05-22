@@ -3,7 +3,7 @@ package mysql
 import (
 	"fmt"
 
-	"github.com/xinliangnote/go-gin-api/pkg/errors"
+	"github.com/zhangdi168/dq-bot/pkg/errors"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

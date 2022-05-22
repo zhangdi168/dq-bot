@@ -1,0 +1,107 @@
+{{define "admin/pop_add_js"}}
+    <script type="text/javascript" src="/assets/bootstrap/js/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+    <script type="text/javascript" src="/assets/bootstrap/js/bootstrap-multitabs/multitabs.min.js"></script>
+    <script type="text/javascript" src="/assets/bootstrap/js/authorization/md5.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+
+        $("input#username").maxlength({
+            warningClass: "badge badge-info",
+            limitReachedClass: "badge badge-warning"
+        });
+
+        $("input#nickname").maxlength({
+            warningClass: "badge badge-info",
+            limitReachedClass: "badge badge-warning"
+        });
+
+        $("input#mobile").maxlength({
+            warningClass: "badge badge-info",
+            limitReachedClass: "badge badge-warning"
+        });
+
+        $("input#password").maxlength({
+            warningClass: "badge badge-info",
+            limitReachedClass: "badge badge-warning"
+        });
+
+        $('#btnOk').on('click', function () {
+            const username = $("#username").val();
+            if (username === "") {
+                $.alert({
+                    title: '温馨提示',
+                    icon: 'mdi mdi-alert',
+                    type: 'orange',
+                    content: '请输入用户名。',
+                });
+                return false;
+            }
+
+            const nickname = $("#nickname").val();
+            if (nickname === "") {
+                $.alert({
+                    title: '温馨提示',
+                    icon: 'mdi mdi-alert',
+                    type: 'orange',
+                    content: '请输入昵称。',
+                });
+                return false;
+            }
+
+            const password = $("#password").val();
+            if (password === "") {
+                $.alert({
+                    title: '温馨提示',
+                    icon: 'mdi mdi-alert',
+                    type: 'orange',
+                    content: '请输入密码。',
+                });
+                return false;
+            }
+
+            const postData = {
+                username: username,
+                nickname: nickname,
+                mobile: $("#mobile").val(),
+                password: md5(password),
+            };
+
+
+            AjaxForm(
+                "POST",
+                "/api/admin",
+                postData,
+                function () {
+                    $(this).hide();
+                    $("#btnLoading").show();
+                },
+                function (data) {
+                    $("#btnLoading").hide();
+                    $("#btnOk").show();
+
+                    $.alert({
+                        title: '操作成功',
+                        icon: 'mdi mdi-check-decagram',
+                        type: 'green',
+                        content: '编号：' + data.id + ' 创建完成。',
+                        buttons: {
+                            okay: {
+                                text: '关闭',
+                                action: function () {
+                                    location.href = "/admin/list";
+                                }
+                            }
+                        }
+                    });
+                },
+                function (response) {
+                    $("#btnLoading").hide();
+                    $("#btnOk").show();
+
+                    AjaxError(response);
+                }
+            );
+        });
+    })
+</script>
+{{end}}

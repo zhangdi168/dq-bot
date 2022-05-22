@@ -27,7 +27,7 @@ import (
 // @license.url https://github.com/zhangdi168/dq-bot/blob/master/LICENSE
 
 // @securityDefinitions.apikey  LoginToken
-// @in                          header
+// @in                           header
 // @name                        token
 
 // @BasePath /

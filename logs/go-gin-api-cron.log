@@ -82,3 +82,24 @@
 {"level":"info","time":"2022-05-23 01:54:29","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"go-gin-api[fat]"}
 {"level":"info","time":"2022-05-23 01:56:45","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"go-gin-api[fat]"}
 {"level":"info","time":"2022-05-23 01:56:45","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 10:37:16","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 10:37:16","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"go-gin-api[fat]"}
+{"level":"fatal","time":"2022-05-23 10:56:25","caller":"cron/cron_start.go:21","msg":"cron initialize tasks count err","domain":"go-gin-api[fat]","error":"Error 1146: Table 'dqbot168.cron_task' doesn't exist"}
+{"level":"info","time":"2022-05-23 10:57:28","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 10:57:28","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 11:03:01","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 11:03:01","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 11:04:03","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 11:04:03","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 11:04:38","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 11:04:38","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 11:05:58","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 11:05:58","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 11:44:13","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 11:44:13","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 11:59:13","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 11:59:13","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 16:07:36","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 16:07:36","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 18:10:29","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"go-gin-api[fat]"}
+{"level":"info","time":"2022-05-23 18:10:29","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"go-gin-api[fat]"}

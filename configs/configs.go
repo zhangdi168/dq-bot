@@ -18,6 +18,10 @@ import (
 var config = new(Config)
 
 type Config struct {
+	Bot struct {
+		Appid uint64 `toml:"appid"`
+		Token string `toml:"token"`
+	}
 	MySQL struct {
 		Read struct {
 			Addr string `toml:"addr"`

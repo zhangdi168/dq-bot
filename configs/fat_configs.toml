@@ -21,21 +21,25 @@
     maxopenconn = 10
 
   [mysql.read]
-    addr = "127.0.0.1:3306"
+    addr = "119.29.64.194:3306"
     name = "dqbot168"
     pass = "dqbot168"
     user = "dqbot168"
 
   [mysql.write]
-    addr = "127.0.0.1:3306"
+    addr = "119.29.64.194:3306"
     name = "dqbot168"
     pass = "dqbot168"
     user = "dqbot168"
 
 [redis]
-  addr = "127.0.0.1:6379"
-  db = "0"
+  addr = "119.29.64.194:6789"
+  db = "1"
   maxretries = 3
   minidleconns = 5
-  pass = ""
+  pass = "dqbotredis"
   poolsize = 10
+
+[bot]
+  appid= 102005901
+  token= "GhzKo5iMaVrkyUujR36pcju3DsvjGV7x"

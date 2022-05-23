@@ -3,14 +3,16 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/mainbot"
+	"net/http"
+	"time"
+
 	"github.com/zhangdi168/dq-bot/configs"
 	"github.com/zhangdi168/dq-bot/internal/router"
 	"github.com/zhangdi168/dq-bot/pkg/env"
 	"github.com/zhangdi168/dq-bot/pkg/logger"
 	"github.com/zhangdi168/dq-bot/pkg/shutdown"
 	"github.com/zhangdi168/dq-bot/pkg/timeutil"
-	"net/http"
-	"time"
 
 	"go.uber.org/zap"
 )
@@ -76,6 +78,10 @@ func main() {
 			accessLogger.Fatal("http server startup err", zap.Error(err))
 		}
 	}()
+
+	//协程运行：qq机器初始化和逻辑处理入口
+	//将数据库实例传入
+	go mainbot.EntryInit(s)
 
 	// 优雅关闭
 	shutdown.NewHook().Close(

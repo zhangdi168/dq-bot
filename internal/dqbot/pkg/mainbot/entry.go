@@ -2,15 +2,17 @@ package mainbot
 
 import (
 	"context"
+	"os"
+	"time"
+
+	"github.com/zhangdi168/dq-bot/configs"
+	"github.com/zhangdi168/dq-bot/internal/router"
+
 	"github.com/tencent-connect/botgo"
 	"github.com/tencent-connect/botgo/event"
 	"github.com/tencent-connect/botgo/openapi"
 	"github.com/tencent-connect/botgo/token"
 	"github.com/tencent-connect/botgo/websocket"
-	"github.com/zhangdi168/dq-bot/configs"
-	"github.com/zhangdi168/dq-bot/internal/router"
-	"os"
-	"time"
 )
 
 var api openapi.OpenAPI

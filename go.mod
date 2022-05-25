@@ -25,6 +25,7 @@ require (
 	github.com/spf13/viper v1.9.0
 	github.com/swaggo/gin-swagger v1.3.3
 	github.com/swaggo/swag v1.7.4
+	github.com/tencent-connect/botgo v0.1.6
 	github.com/tklauser/go-sysconf v0.3.9 // indirect
 	github.com/vektah/gqlparser/v2 v2.2.0
 	go.uber.org/multierr v1.7.0

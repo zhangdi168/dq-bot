@@ -17,6 +17,7 @@ import (
 	"go.uber.org/zap"
 )
 
+//重命名
 type HandlerFunc func(c Context)
 
 type Trace = trace.T

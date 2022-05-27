@@ -251,6 +251,8 @@ func New(logger *zap.Logger, options ...Option) (Mux, error) {
 
 	mux.engine.StaticFS("assets", http.FS(assets.Bootstrap))
 	mux.engine.SetHTMLTemplate(template.Must(template.New("").ParseFS(assets.Templates, "templates/**/*")))
+	//将变量输出{{}}一换成{$$}
+	//mux.engine.Delims("[[[", "]]]")
 
 	// withoutTracePaths 这些请求，默认不记录日志
 	withoutTracePaths := map[string]bool{
@@ -367,7 +369,7 @@ func New(logger *zap.Logger, options ...Option) (Mux, error) {
 			// region 发生 Panic 异常发送告警提醒
 			if err := recover(); err != nil {
 				stackInfo := string(debug.Stack())
-				logger.Error("got panic", zap.String("panic", fmt.Sprintf("%+v", err)), zap.String("stack", stackInfo))
+				logger.Error("got panic"+fmt.Sprintf("%+v", err), zap.String("panic", fmt.Sprintf("%+v", err)), zap.String("stack", stackInfo))
 				context.AbortWithError(Error(
 					http.StatusInternalServerError,
 					code.ServerError,

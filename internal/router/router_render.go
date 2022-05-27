@@ -10,6 +10,7 @@ import (
 	generatorhandler "github.com/zhangdi168/dq-bot/internal/render/generator"
 	"github.com/zhangdi168/dq-bot/internal/render/index"
 	"github.com/zhangdi168/dq-bot/internal/render/install"
+	"github.com/zhangdi168/dq-bot/internal/render/keywords"
 	"github.com/zhangdi168/dq-bot/internal/render/tool"
 	"github.com/zhangdi168/dq-bot/internal/render/upgrade"
 )
@@ -26,6 +27,8 @@ func setRenderRouter(r *resource) {
 	renderAdmin := admin.New(r.logger, r.db, r.cache)
 	renderUpgrade := upgrade.New(r.logger, r.db, r.cache)
 	renderCron := cron.New(r.logger, r.db, r.cache)
+	renderKeywords := keywords.New(r.logger, r.db, r.cache)
+	//{$gencode_new_router}
 
 	// 无需记录日志，无需 RBAC 权限验证
 	notRBAC := r.mux.Group("", core.DisableTraceLog, core.DisableRecordMetrics)
@@ -88,5 +91,9 @@ func setRenderRouter(r *resource) {
 		render.GET("/cron/list", renderCron.List())
 		render.GET("/cron/add", renderCron.Add())
 		render.GET("/cron/edit/:id", renderCron.Edit())
+
+		//关键词
+		render.GET("/keywords/list", renderKeywords.List())
+		//{$gencode_set_router}
 	}
 }

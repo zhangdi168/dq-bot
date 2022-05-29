@@ -7,10 +7,10 @@ const (
 	MinGoVersion = 1.16
 
 	// ProjectVersion 项目版本
-	ProjectVersion = "v1.2.8"
+	ProjectVersion = "v1.0"
 
 	// ProjectName 项目名称
-	ProjectName = "go-gin-api"
+	ProjectName = "dq-bot"
 
 	// ProjectDomain 项目域名
 	ProjectDomain = "http://127.0.0.1"

@@ -205,7 +205,7 @@ func (qb *dqUserQueryBuilder) OrderByNickname(asc bool) *dqUserQueryBuilder {
 	return qb
 }
 
-func (qb *dqUserQueryBuilder) WhereQqId(p mysql.Predicate, value int32) *dqUserQueryBuilder {
+func (qb *dqUserQueryBuilder) WhereQqId(p mysql.Predicate, value string) *dqUserQueryBuilder {
 	qb.where = append(qb.where, struct {
 		prefix string
 		value  interface{}

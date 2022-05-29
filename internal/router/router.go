@@ -47,17 +47,18 @@ func NewHTTPServer(logger *zap.Logger, cronLogger *zap.Logger) (*Server, error) 
 	} else { // 已安装
 
 		// 初始化 DB
-		dbRepo, err := mysql.New()
-		if err != nil {
-			logger.Fatal("new db err", zap.Error(err))
-		}
+		//dbRepo, err := mysql.New()
+		//if err != nil {
+		//	logger.Fatal("new db err", zap.Error(err))
+		//}
+		dbRepo := mysql.GetDb()
 		r.db = dbRepo
 
 		// 初始化 Cache
-		cacheRepo, err := redis.New()
-		if err != nil {
-			logger.Fatal("new cache err", zap.Error(err))
-		}
+		cacheRepo := redis.GetCache()
+		//if err != nil {
+		//	logger.Fatal("new cache err", zap.Error(err))
+		//}
 		r.cache = cacheRepo
 
 		// 初始化 CRON Server

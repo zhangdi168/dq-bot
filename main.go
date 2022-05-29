@@ -81,7 +81,7 @@ func main() {
 
 	//协程运行：qq机器初始化和逻辑处理入口
 	//将数据库实例传入
-	go mainbot.EntryInit(s)
+	go mainbot.EntryInit()
 
 	// 优雅关闭
 	shutdown.NewHook().Close(

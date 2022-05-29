@@ -7,7 +7,8 @@ import "time"
 type DqUser struct {
 	Id       int32     //
 	Nickname string    // 昵称
-	QqId     int32     // qq的唯一ID
+	QqId     string    // qq的唯一ID
+	Avatar   string    // 头像
 	CreateAt time.Time `gorm:"time"` // 创建时间
 	UpdateAt time.Time `gorm:"time"` // 修改时间
 }

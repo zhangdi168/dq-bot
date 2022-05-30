@@ -42,7 +42,8 @@ func NewHTTPServer(logger *zap.Logger, cronLogger *zap.Logger) (*Server, error) 
 	openBrowserUri := configs.ProjectDomain + configs.ProjectPort
 
 	_, ok := file.IsExists(configs.ProjectInstallMark)
-	if !ok { // 未安装
+	ok = true //取消安装，直接导入sql方式
+	if !ok {  // 未安装
 		openBrowserUri += "/install"
 	} else { // 已安装
 

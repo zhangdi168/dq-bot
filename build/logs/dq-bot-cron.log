@@ -1,0 +1,8 @@
+{"level":"info","time":"2022-05-30 17:39:30","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-05-30 17:39:30","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-05-30 17:40:59","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-05-30 17:40:59","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-05-30 17:41:31","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-05-30 17:41:31","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-05-30 17:43:50","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-05-30 17:43:50","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}

@@ -24,6 +24,7 @@ func New(logger *zap.Logger, db mysql.Repo, cache redis.Repo) *handler {
 
 func (h *handler) List() core.HandlerFunc {
 	return func(ctx core.Context) {
-		ctx.HTML("keywords_list", nil)
+
+		ctx.HTML("list_keywords", nil)
 	}
 }

@@ -2,6 +2,7 @@ package redis
 
 import (
 	"fmt"
+
 	"go.uber.org/zap"
 )
 

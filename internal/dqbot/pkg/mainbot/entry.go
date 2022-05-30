@@ -5,12 +5,13 @@ import (
 	"os"
 	"time"
 
+	"github.com/zhangdi168/dq-bot/configs"
+
 	"github.com/tencent-connect/botgo"
 	"github.com/tencent-connect/botgo/event"
 	"github.com/tencent-connect/botgo/openapi"
 	"github.com/tencent-connect/botgo/token"
 	"github.com/tencent-connect/botgo/websocket"
-	"github.com/zhangdi168/dq-bot/configs"
 )
 
 var api openapi.OpenAPI

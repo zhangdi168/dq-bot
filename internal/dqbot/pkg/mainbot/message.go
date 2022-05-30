@@ -3,10 +3,12 @@ package mainbot
 //本文件主要用于处理机器人消息
 
 import (
-	"github.com/tencent-connect/botgo/dto"
+	"strings"
+
 	"github.com/zhangdi168/dq-bot/internal/services/sermessage"
 	"github.com/zhangdi168/dq-bot/internal/services/seruser"
-	"strings"
+
+	"github.com/tencent-connect/botgo/dto"
 )
 
 //atMessageEventHandler 处理 @机器人 的消息

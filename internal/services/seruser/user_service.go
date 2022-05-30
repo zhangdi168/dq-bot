@@ -2,10 +2,11 @@ package seruser
 
 import (
 	"encoding/json"
+	"time"
+
 	"github.com/zhangdi168/dq-bot/internal/repository/mysql"
 	"github.com/zhangdi168/dq-bot/internal/repository/mysql/dq_user"
 	"github.com/zhangdi168/dq-bot/internal/repository/redis"
-	"time"
 )
 
 var cacheUserPre string = "userinfo:"

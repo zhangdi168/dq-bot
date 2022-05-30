@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{{define "keywords/pop_add"}}
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
 
-</body>
-</html>
+                <h4 class="modal-title" id="myModalLabel" style="text-align: center">添加</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid p-t-15">
+                    这里写你的html代码·····{$site$}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" id="btnOk" class="btn btn-primary" @click="details">提交</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#addModal',
+        delimiters:['{$','$}'],
+        data: {
+            site: "菜鸟教程11122",
+            url: "www.runoob.com",
+            alexa: "10000"
+        },
+        methods: {
+            details: function() {
+                console.log(this.site + " - 学的不仅是技术，更是梦想！");
+                AjaxForm(
+                    "POST",
+                    "/api/admin",
+                    {"test":1},
+                    function () {
+                        console.log("1");
+                    },
+                    function (data) {
+                        console.log("2",data);
+                    },
+                    function (response) {
+                        console.log("3",response);
+                    }
+                );
+            }
+        }
+    })
+</script>
+
+{{end}}

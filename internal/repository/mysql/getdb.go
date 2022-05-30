@@ -2,6 +2,7 @@ package mysql
 
 import (
 	"fmt"
+
 	"go.uber.org/zap"
 )
 

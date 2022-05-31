@@ -162,46 +162,46 @@ func (qb *dqMessageQueryBuilder) OrderById(asc bool) *dqMessageQueryBuilder {
 	return qb
 }
 
-func (qb *dqMessageQueryBuilder) WhereMessage(p mysql.Predicate, value string) *dqMessageQueryBuilder {
+func (qb *dqMessageQueryBuilder) WhereContent(p mysql.Predicate, value string) *dqMessageQueryBuilder {
 	qb.where = append(qb.where, struct {
 		prefix string
 		value  interface{}
 	}{
-		fmt.Sprintf("%v %v ?", "message", p),
+		fmt.Sprintf("%v %v ?", "content", p),
 		value,
 	})
 	return qb
 }
 
-func (qb *dqMessageQueryBuilder) WhereMessageIn(value []string) *dqMessageQueryBuilder {
+func (qb *dqMessageQueryBuilder) WhereContentIn(value []string) *dqMessageQueryBuilder {
 	qb.where = append(qb.where, struct {
 		prefix string
 		value  interface{}
 	}{
-		fmt.Sprintf("%v %v ?", "message", "IN"),
+		fmt.Sprintf("%v %v ?", "content", "IN"),
 		value,
 	})
 	return qb
 }
 
-func (qb *dqMessageQueryBuilder) WhereMessageNotIn(value []string) *dqMessageQueryBuilder {
+func (qb *dqMessageQueryBuilder) WhereContentNotIn(value []string) *dqMessageQueryBuilder {
 	qb.where = append(qb.where, struct {
 		prefix string
 		value  interface{}
 	}{
-		fmt.Sprintf("%v %v ?", "message", "NOT IN"),
+		fmt.Sprintf("%v %v ?", "content", "NOT IN"),
 		value,
 	})
 	return qb
 }
 
-func (qb *dqMessageQueryBuilder) OrderByMessage(asc bool) *dqMessageQueryBuilder {
+func (qb *dqMessageQueryBuilder) OrderByContent(asc bool) *dqMessageQueryBuilder {
 	order := "DESC"
 	if asc {
 		order = "ASC"
 	}
 
-	qb.order = append(qb.order, "message "+order)
+	qb.order = append(qb.order, "content "+order)
 	return qb
 }
 

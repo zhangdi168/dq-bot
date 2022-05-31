@@ -95,5 +95,6 @@ func setRenderRouter(r *resource) {
 		//关键词
 		render.GET("/keywords/list", renderKeywords.List())
 		//{$gencode_set_router}
+
 	}
 }

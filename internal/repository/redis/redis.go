@@ -45,17 +45,6 @@ type cacheRepo struct {
 	client *redis.Client
 }
 
-func New() (Repo, error) {
-	client, err := redisConnect()
-	if err != nil {
-		return nil, err
-	}
-
-	return &cacheRepo{
-		client: client,
-	}, nil
-}
-
 func (c *cacheRepo) i() {}
 
 func redisConnect() (*redis.Client, error) {

@@ -40,24 +40,6 @@ type dbRepo struct {
 	DbW *gorm.DB
 }
 
-func New() (Repo, error) {
-	cfg := configs.Get().MySQL
-	dbr, err := dbConnect(cfg.Read.User, cfg.Read.Pass, cfg.Read.Addr, cfg.Read.Name)
-	if err != nil {
-		return nil, err
-	}
-
-	dbw, err := dbConnect(cfg.Write.User, cfg.Write.Pass, cfg.Write.Addr, cfg.Write.Name)
-	if err != nil {
-		return nil, err
-	}
-
-	return &dbRepo{
-		DbR: dbr,
-		DbW: dbw,
-	}, nil
-}
-
 func (d *dbRepo) i() {}
 
 func (d *dbRepo) GetDbR() *gorm.DB {

@@ -35,7 +35,7 @@ func messageSave(data *dto.WSATMessageData) {
 		println(err)
 	}
 	//获取用户最新n条信息
-	//list, _ := service.GetLastMsg(data.Author.ID, 100)
+	_, _ = service.GetLastMsg(data.Author.ID, 100)
 
 }
 

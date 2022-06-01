@@ -13,6 +13,7 @@ import (
 
 //atMessageEventHandler 处理 @机器人 的消息
 func atMessageEventHandler(event *dto.WSPayload, data *dto.WSATMessageData) error {
+
 	go messageSave(data) //开一个协程保存消息
 	go checkUser(data)   //开一个协程 检测用户是否存在
 	content := data.Content[24:]

@@ -24,12 +24,12 @@ func GetDb() *dbRepo {
 	return db
 }
 
-//获取读库实例
+//获取【读】库实例
 func GetDbRead() *gorm.DB {
 	return db.GetDbR()
 }
 
-// 获取写库实例
+// 获取【写】库实例
 func GetDbWrite() *gorm.DB {
 	return db.GetDbW()
 }

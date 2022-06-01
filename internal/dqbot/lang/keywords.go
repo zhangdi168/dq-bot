@@ -11,7 +11,7 @@ type keywords struct {
 	MatchType string `cn:"匹配类型" en:"match_type"`
 	ReplyType string `cn:"回复类型" en:"reply_type"`
 	TouchType string `cn:"触发类型" en:"touch_type"`
-	ReplyJson string `cn:"恢复数据" en:"reply_json"`
+	ReplyJson string `cn:"回复内容" en:"reply_json"`
 	PluginId  string `cn:"插件ID" en:"plugin_id"`
 	Remark    string `cn:"关键词备注" en:"remark"`
 	CreateAt  string `cn:"创建时间" en:"create_at"`

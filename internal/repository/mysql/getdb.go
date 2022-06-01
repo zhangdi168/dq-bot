@@ -15,21 +15,21 @@ func init() {
 	db1, err := connectMysql()
 	db = db1
 	if err != nil {
-		fmt.Printf("new db err", zap.Error(err))
+		fmt.Printf("new db err : %v", zap.Error(err))
 	}
 }
 
-// GetInstance 获取数据库实例
+// GetDb GetInstance 获取数据库实例
 func GetDb() *dbRepo {
 	return db
 }
 
-//获取【读】库实例
+// GetDbRead 获取【读】库实例
 func GetDbRead() *gorm.DB {
 	return db.GetDbR()
 }
 
-// 获取【写】库实例
+// GetDbWrite 获取【写】库实例
 func GetDbWrite() *gorm.DB {
 	return db.GetDbW()
 }

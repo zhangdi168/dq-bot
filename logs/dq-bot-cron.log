@@ -164,3 +164,15 @@
 {"level":"info","time":"2022-06-01 18:34:43","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}
 {"level":"info","time":"2022-06-01 18:39:51","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"dq-bot[fat]"}
 {"level":"info","time":"2022-06-01 18:39:51","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-06-02 17:06:24","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-06-02 17:06:24","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-06-02 17:06:58","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-06-02 17:06:58","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-06-02 17:11:45","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-06-02 17:11:45","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-06-02 17:14:56","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-06-02 17:14:56","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-06-02 17:18:03","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-06-02 17:18:03","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-06-02 17:31:40","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-06-02 17:31:40","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}

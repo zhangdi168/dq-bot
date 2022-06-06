@@ -216,3 +216,5 @@
 {"level":"info","time":"2022-06-07 00:09:19","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}
 {"level":"info","time":"2022-06-07 00:09:59","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"dq-bot[fat]"}
 {"level":"info","time":"2022-06-07 00:09:59","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-06-07 01:21:05","caller":"cron/cron_start.go:28","msg":"开始初始化后台任务","domain":"dq-bot[fat]"}
+{"level":"info","time":"2022-06-07 01:21:05","caller":"cron/cron_start.go:48","msg":"后台任务初始化完成，总数量：0","domain":"dq-bot[fat]"}

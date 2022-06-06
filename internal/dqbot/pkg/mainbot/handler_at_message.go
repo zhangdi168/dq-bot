@@ -21,12 +21,14 @@ func atMessageEventHandler(event *dto.WSPayload, data *dto.WSATMessageData) erro
 	if strings.HasSuffix(content, "hello") { // 如果@机器人并输入 hello 则回复 你好。
 		//api.PostMessage(ctx, data.ChannelID, &dto.MessageToCreate{MsgID: data.ID, Content: "你好"})
 
-		//创建艾特消息回复对象
-		dqReply := reply.NewReplyCore(data.ChannelID, data.GuildID, data.ID, data.Author.ID)
+		//创建群消息回复对象
+		dqAtReply := reply.NewReplyAtMessage(data.ChannelID, data.GuildID, data.ID, data.Author.ID)
+		//创建私信消息回复对象
+		dqDirectReply := reply.NewDirect(data.GuildID, data.Author.ID, data.ID)
 
 		//1.回复普通文本
-		dqReply.TextAt("你好呀 at")
-		dqReply.TextDirect("你好呀 私信")
+		dqAtReply.ReplyText("你好呀 at")
+		dqDirectReply.ReplyText("你好呀 私信")
 
 		//
 		////2.回复ark23

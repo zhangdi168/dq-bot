@@ -9,8 +9,8 @@ import (
 	"time"
 )
 
-var api openapi.OpenAPI
-var ctx context.Context
+var Api openapi.OpenAPI
+var Ctx context.Context
 var botToken *token.Token
 
 //初始化sdk的token相关对象
@@ -21,9 +21,9 @@ func init() {
 	botToken = token.BotToken(configAppid, configToken)
 
 	//第三步：获取操作机器人的API对象
-	api = botgo.NewOpenAPI(botToken).WithTimeout(3 * time.Second)
+	Api = botgo.NewOpenAPI(botToken).WithTimeout(3 * time.Second)
 	//获取context
-	ctx = context.Background()
+	Ctx = context.Background()
 }
 
 func GetToken() *token.Token {
@@ -31,9 +31,9 @@ func GetToken() *token.Token {
 }
 
 func GetContext() context.Context {
-	return ctx
+	return Ctx
 }
 
 func GetApi() openapi.OpenAPI {
-	return api
+	return Api
 }

@@ -3,6 +3,7 @@ package mainbot
 //本文件主要用于处理机器人消息
 
 import (
+	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/gosdk/reply"
 	"strings"
 
 	"github.com/zhangdi168/dq-bot/internal/services/sermessage"
@@ -18,7 +19,32 @@ func atMessageEventHandler(event *dto.WSPayload, data *dto.WSATMessageData) erro
 	go checkUser(data)   //开一个协程 检测用户是否存在
 	content := data.Content[24:]
 	if strings.HasSuffix(content, "hello") { // 如果@机器人并输入 hello 则回复 你好。
-		api.PostMessage(ctx, data.ChannelID, &dto.MessageToCreate{MsgID: data.ID, Content: "你好"})
+		//api.PostMessage(ctx, data.ChannelID, &dto.MessageToCreate{MsgID: data.ID, Content: "你好"})
+
+		//创建艾特消息回复对象
+		dqReply := reply.NewReplyAtMessage(data)
+
+		//1.回复普通文本
+		dqReply.ReplyText("你好呀 hello")
+
+		//2.回复ark23
+		ark23 := reply.NewTemplateArk23("描述", "ddd")
+		ark23.AddItem("hhhh", "")
+		ark23.AddItem("欢迎大家，感谢大家光临", "")
+		for i := 0; i < 10; i++ {
+			ark23.AddItem("这是一项ark23消息-"+string(i), "")
+		}
+		dqReply.ReplyArk23(ark23)
+
+		//3.回复ark24
+		dqReply.ReplyArk24(reply.NewTemplateArk24("ark24", "https://www.qiwei.site/dq/test24.png", "描述ark24", ""))
+
+		//3.回复ark34
+		dqReply.ReplyArk34(reply.NewTemplateArk34("ark34", "https://www.qiwei.site/dq/test24.png", "描述ark34", ""))
+
+		//3.回复ark37
+		dqReply.ReplyArk37(reply.NewTemplateArk37("ark37", "https://www.qiwei.site/dq/test24.png", "子标题", ""))
+
 	}
 	return nil
 }

@@ -12,6 +12,11 @@ type DqReplyDirect struct {
 	directMsg *dto.DirectMessage
 }
 
+func (d *DqReplyDirect) ReplyEmbed(tempEmbed *DqTemplateEmbed) {
+	//TODO implement me
+	panic("implement me")
+}
+
 // NewDirect 初始化DqDirect对象和创建私信会话出书画
 func NewDirect(data_ *dto.WSDirectMessageData) IDqReply {
 	directMsg_, err := gosdk.Api.CreateDirectMessage(gosdk.Ctx, &dto.DirectMessageToCreate{

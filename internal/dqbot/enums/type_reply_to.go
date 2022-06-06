@@ -7,17 +7,13 @@ import (
 
 //自动回复的消息类型
 //首字母大写 会自动转换小写
-type typeReply struct {
-	Text  string //纯文本    text
-	Embed string //embed
-	Ark24 string //文字+图片 ark24 ark34
-	Ark34 string //文字+图片 ark34
-	Ark23 string //文字链接  ark23
-	Ark37 string //大图片 ark37
+type typeReplyTo struct {
+	At     string //回复艾特消息
+	Direct string //回复私信
 }
 
-func EnumsReply() *typeReply {
-	temp1 := &typeReply{}
+func EnumsReplyTo() *typeReplyTo {
+	temp1 := &typeReplyTo{}
 	var typeInfo = reflect.TypeOf(*temp1)
 	var s = reflect.ValueOf(temp1).Elem()
 	num := typeInfo.NumField()

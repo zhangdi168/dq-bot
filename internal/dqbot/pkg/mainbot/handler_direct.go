@@ -7,8 +7,8 @@ import (
 
 //私信事件
 func directMessageEventHandler(payload *dto.WSPayload, data *dto.WSDirectMessageData) error {
-	println("私信事件")
-	dqDirect := reply.NewDirect(data)
+	//println("私信事件")
+	//dqDirect := reply.NewDirect(data)
 	//dqDirect.ReplyText("哈哈哈哈")
 	//dqDirect.ReplyText("第二条回复")
 	//dqDirect.ReplyText("第3条回复")
@@ -24,10 +24,18 @@ func directMessageEventHandler(payload *dto.WSPayload, data *dto.WSDirectMessage
 	//ark24.SetSubTitle("子标题呀") //设置子标题
 	//dqDirect.ReplyArk24(ark24)
 
-	ark34 := reply.NewTemplateArk34("test image", "https://www.qiwei.site/dq/test24.png", "这里是描述", "")
-	dqDirect.ReplyArk34(ark34)
+	//ark34 := reply.NewTemplateArk34("test image", "https://www.qiwei.site/dq/test24.png", "这里是描述", "")
+	//dqDirect.ReplyArk34(ark34)
+	//
+	//ark37 := reply.NewTemplateArk37("test image", "https://www.qiwei.site/dq/test24.png", "子标题", "")
+	//dqDirect.ReplyArk37(ark37)
 
-	ark37 := reply.NewTemplateArk37("test image", "https://www.qiwei.site/dq/test24.png", "子标题", "")
-	dqDirect.ReplyArk37(ark37)
+	//创建艾特消息回复对象
+	dqReply := reply.NewReplyCore(data.ChannelID, data.SrcGuildID, data.ID, data.Author.ID)
+
+	//1.回复普通文本
+	dqReply.TextAt("你好呀 at")
+	dqReply.TextDirect("你好呀 私信")
+
 	return nil
 }

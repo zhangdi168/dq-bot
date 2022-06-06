@@ -10,4 +10,5 @@ type IDqReply interface {
 	ReplyArk24(tempArk24 *DqTemplateArk24)
 	ReplyArk34(tempArk34 *DqTemplateArk34)
 	ReplyArk37(tempArk37 *DqTemplateArk37)
+	ReplyEmbed(tempEmbed *DqTemplateEmbed)
 }

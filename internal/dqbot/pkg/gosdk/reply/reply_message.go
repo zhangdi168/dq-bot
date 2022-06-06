@@ -5,12 +5,12 @@ import (
 	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/gosdk"
 )
 
-// DqReplyGroup 群聊@消息回复
+// DqReplyAtMessage DqReplyGroup 群聊@消息回复
 type DqReplyAtMessage struct {
 	data *dto.WSATMessageData
 }
 
-// NewDirect 初始化DqDirect对象和创建私信会话出书画
+// NewReplyAtMessage NewDirect 初始化DqDirect对象和创建私信会话出书画
 func NewReplyAtMessage(data_ *dto.WSATMessageData) IDqReply {
 	return &DqReplyAtMessage{data: data_}
 }
@@ -53,4 +53,9 @@ func (d *DqReplyAtMessage) ReplyArk37(tempArk37 *DqTemplateArk37) {
 		println(err, message)
 		return
 	}
+}
+
+func (d *DqReplyAtMessage) ReplyEmbed(tempEmbed *DqTemplateEmbed) {
+	arkData := tempEmbed.GetFormatEmbed()
+	gosdk.Api.PostMessage(gosdk.Ctx, d.data.ChannelID, &dto.MessageToCreate{MsgID: d.data.ID, Embed: arkData})
 }

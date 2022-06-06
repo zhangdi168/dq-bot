@@ -22,28 +22,39 @@ func atMessageEventHandler(event *dto.WSPayload, data *dto.WSATMessageData) erro
 		//api.PostMessage(ctx, data.ChannelID, &dto.MessageToCreate{MsgID: data.ID, Content: "你好"})
 
 		//创建艾特消息回复对象
-		dqReply := reply.NewReplyAtMessage(data)
+		dqReply := reply.NewReplyCore(data.ChannelID, data.GuildID, data.ID, data.Author.ID)
 
 		//1.回复普通文本
-		dqReply.ReplyText("你好呀 hello")
+		dqReply.TextAt("你好呀 at")
+		dqReply.TextDirect("你好呀 私信")
 
-		//2.回复ark23
-		ark23 := reply.NewTemplateArk23("描述", "ddd")
-		ark23.AddItem("hhhh", "")
-		ark23.AddItem("欢迎大家，感谢大家光临", "")
-		for i := 0; i < 10; i++ {
-			ark23.AddItem("这是一项ark23消息-"+string(i), "")
-		}
-		dqReply.ReplyArk23(ark23)
+		//
+		////2.回复ark23
+		//ark23 := reply.NewTemplateArk23("描述", "ddd")
+		//ark23.AddItem("hhhh", "")
+		//ark23.AddItem("欢迎大家，感谢大家光临", "")
+		//for i := 0; i < 10; i++ {
+		//	ark23.AddItem("这是一项ark23消息-"+string(i), "")
+		//}
+		//dqReplyAt.ReplyArk23(ark23)
+		//
+		////3.回复ark24
+		//ark24 := reply.NewTemplateArk24("ark24", "https://www.qiwei.site/dq/test24.png", "描述ark24", "")
+		//dqReplyAt.ReplyArk24(ark24)
+		//
+		////3.回复ark34
+		//ark34 := reply.NewTemplateArk34("ark34", "https://www.qiwei.site/dq/test24.png", "描述ark34", "")
+		//dqReplyAt.ReplyArk34(ark34)
+		//
+		////3.回复ark37
+		//ark37 := reply.NewTemplateArk37("ark37", "https://www.qiwei.site/dq/test24.png", "子标题", "")
+		//dqReplyAt.ReplyArk37(ark37)
 
-		//3.回复ark24
-		dqReply.ReplyArk24(reply.NewTemplateArk24("ark24", "https://www.qiwei.site/dq/test24.png", "描述ark24", ""))
-
-		//3.回复ark34
-		dqReply.ReplyArk34(reply.NewTemplateArk34("ark34", "https://www.qiwei.site/dq/test24.png", "描述ark34", ""))
-
-		//3.回复ark37
-		dqReply.ReplyArk37(reply.NewTemplateArk37("ark37", "https://www.qiwei.site/dq/test24.png", "子标题", ""))
+		//4.回复embed
+		//embed := reply.NewTemplateEmbed("embed title", "https://www.qiwei.site/dq/test24.png")
+		//embed.AddItems("第一条", "这是第二条", "这是第三条")
+		//embed.AddItems("第4条")
+		//dqReplyAt.ReplyEmbed(embed)
 
 	}
 	return nil

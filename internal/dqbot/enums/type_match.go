@@ -7,10 +7,11 @@ import (
 
 //消息匹配类型
 type typeMatch struct {
-	All string //全匹配
-	Pre string //前缀
-	Suf string //后缀
-	In  string //包含
+	Full     string //全匹配
+	Pre      string //前缀
+	Suf      string //后缀
+	In       string //包含
+	Interact string //交互
 }
 
 //通过反射获取

@@ -8,7 +8,7 @@ import (
 //私信事件
 func directMessageEventHandler(payload *dto.WSPayload, data *dto.WSDirectMessageData) error {
 	//println("私信事件")
-	//dqDirect := reply.NewDirect(data)
+	//dqDirect := reply.NewDirectReply(data)
 	//dqDirect.ReplyText("哈哈哈哈")
 	//dqDirect.ReplyText("第二条回复")
 	//dqDirect.ReplyText("第3条回复")

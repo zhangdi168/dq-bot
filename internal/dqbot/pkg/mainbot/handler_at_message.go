@@ -24,7 +24,7 @@ func atMessageEventHandler(event *dto.WSPayload, data *dto.WSATMessageData) erro
 		//创建群消息回复对象
 		dqAtReply := reply.NewReplyAtMessage(data.ChannelID, data.GuildID, data.ID, data.Author.ID)
 		//创建私信消息回复对象
-		dqDirectReply := reply.NewDirect(data.GuildID, data.Author.ID, data.ID)
+		dqDirectReply := reply.NewDirectReply(data.GuildID, data.Author.ID, data.ID)
 
 		//1.回复普通文本
 		dqAtReply.ReplyText("你好呀 at")

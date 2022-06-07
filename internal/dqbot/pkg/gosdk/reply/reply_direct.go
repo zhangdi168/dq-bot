@@ -19,8 +19,8 @@ func (d *DqReplyDirect) ReplyEmbed(tempEmbed *DqTemplateEmbed) {
 	panic("implement me")
 }
 
-// NewDirect 初始化DqDirect对象和创建私信会话出书画
-func NewDirect(srcGuildID string, AuthorID string, MsgID string) IDqReply {
+// NewDirectReply 初始化DqDirect对象和创建私信会话出书画
+func NewDirectReply(srcGuildID string, AuthorID string, MsgID string) IDqReply {
 	directMsg_, err := gosdk.Api.CreateDirectMessage(gosdk.Ctx, &dto.DirectMessageToCreate{
 		SourceGuildID: srcGuildID,
 		RecipientID:   AuthorID,

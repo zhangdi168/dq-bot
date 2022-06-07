@@ -13,7 +13,7 @@ type DqReplyAtMessage struct {
 	MsgID     string
 }
 
-// NewReplyAtMessage NewDirect 初始化DqDirect对象和创建私信会话出书画
+// NewReplyAtMessage NewDirectReply 初始化DqDirect对象和创建私信会话出书画
 func NewReplyAtMessage(ChannelID string, GuildID string, MsgID string, AuthorID string) IDqReply {
 	return &DqReplyAtMessage{
 		ChannelID: ChannelID,

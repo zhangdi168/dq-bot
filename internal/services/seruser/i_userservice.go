@@ -18,7 +18,7 @@ type UserService interface {
 
 type CreateUserParams struct {
 	NickName string `json:"nick_name"`
-	QqID     string `json:"qq_id"`
+	QQID     string `json:"qq_id"`
 	Avatar   string `json:"avatar"`
 }
 

@@ -9,6 +9,9 @@ type DqUser struct {
 	Nickname string    // 昵称
 	QqId     string    // qq的唯一ID
 	Avatar   string    // 头像
+	Credit1  int64     //积分1
+	Credit2  int64     //积分2
+	Credit3  int64     //积分3
 	CreateAt time.Time `gorm:"time"` // 创建时间
 	UpdateAt time.Time `gorm:"time"` // 修改时间
 }

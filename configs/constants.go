@@ -24,6 +24,9 @@ const (
 	// ProjectCronLogFile 项目后台任务日志存放文件
 	ProjectCronLogFile = "./logs/" + ProjectName + "-cron.log"
 
+	// ProjectDqLogFile qq频道机器人日志存放文件
+	ProjectDqLogFile = "./logs/" + ProjectName + ".log"
+
 	// ProjectInstallMark 项目安装完成标识
 	ProjectInstallMark = "INSTALL.lock"
 

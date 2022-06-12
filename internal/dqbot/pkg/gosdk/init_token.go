@@ -6,12 +6,16 @@ import (
 	"github.com/tencent-connect/botgo/openapi"
 	"github.com/tencent-connect/botgo/token"
 	"github.com/zhangdi168/dq-bot/configs"
+	"github.com/zhangdi168/dq-bot/pkg/logger"
+	"github.com/zhangdi168/dq-bot/pkg/timeutil"
+	"go.uber.org/zap"
 	"time"
 )
 
 var Api openapi.OpenAPI
 var Ctx context.Context
 var botToken *token.Token
+var DqLog *zap.Logger
 
 //初始化sdk的token相关对象
 func init() {
@@ -24,6 +28,21 @@ func init() {
 	Api = botgo.NewOpenAPI(botToken).WithTimeout(3 * time.Second)
 	//获取context
 	Ctx = context.Background()
+
+	//初始化日志
+	// 初始化 access logger
+	var err error
+	DqLog, err = logger.NewJSONLogger(
+		logger.WithDisableConsole(),
+		//logger.WithField("domain", fmt.Sprintf("%s[%s]", configs.ProjectName, env.Active().Value())),
+		logger.WithTimeLayout(timeutil.CSTLayout),
+		logger.WithFileP(configs.ProjectAccessLogFile),
+	)
+	if err != nil {
+		panic(err)
+	}
+	defer DqLog.Sync()
+
 }
 
 func GetToken() *token.Token {

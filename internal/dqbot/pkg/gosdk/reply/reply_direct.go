@@ -14,7 +14,7 @@ type DqReplyDirect struct {
 	directMsg  *dto.DirectMessage
 }
 
-func (d *DqReplyDirect) ReplyEmbed(tempEmbed *DqTemplateEmbed) {
+func (d *DqReplyDirect) Embed(tempEmbed *DqTemplateEmbed) {
 	//TODO implement me
 	panic("implement me")
 }
@@ -32,7 +32,7 @@ func NewDirectReply(srcGuildID string, AuthorID string, MsgID string) IDqReply {
 	return &DqReplyDirect{srcGuildID: srcGuildID, AuthorID: AuthorID, MsgID: MsgID, directMsg: directMsg_}
 }
 
-func (d *DqReplyDirect) ReplyText(content string) {
+func (d *DqReplyDirect) Text(content string) {
 	_, err1 := gosdk.Api.PostDirectMessage(gosdk.Ctx, d.directMsg, &dto.MessageToCreate{
 		Content: content,
 		MsgID:   d.MsgID,
@@ -42,23 +42,23 @@ func (d *DqReplyDirect) ReplyText(content string) {
 	}
 }
 
-func (d *DqReplyDirect) ReplyArk23(tempArk23 *DqTemplateArk23) {
+func (d *DqReplyDirect) Ark23(tempArk23 *DqTemplateArk23) {
 	arkData := tempArk23.GetFormatArk()
 	gosdk.Api.PostDirectMessage(gosdk.Ctx, d.directMsg, &dto.MessageToCreate{MsgID: d.MsgID, Ark: arkData})
 }
 
-func (d *DqReplyDirect) ReplyArk24(tempArk24 *DqTemplateArk24) {
+func (d *DqReplyDirect) Ark24(tempArk24 *DqTemplateArk24) {
 	arkData := tempArk24.GetFormatArk()
 	gosdk.Api.PostDirectMessage(gosdk.Ctx, d.directMsg, &dto.MessageToCreate{MsgID: d.MsgID, Ark: arkData})
 }
 
-func (d *DqReplyDirect) ReplyArk34(tempArk34 *DqTemplateArk34) {
+func (d *DqReplyDirect) Ark34(tempArk34 *DqTemplateArk34) {
 	arkData := tempArk34.GetFormatArk()
 	gosdk.Api.PostDirectMessage(gosdk.Ctx, d.directMsg, &dto.MessageToCreate{MsgID: d.MsgID, Ark: arkData})
 
 }
 
-func (d *DqReplyDirect) ReplyArk37(tempArk37 *DqTemplateArk37) {
+func (d *DqReplyDirect) Ark37(tempArk37 *DqTemplateArk37) {
 	arkData := tempArk37.GetFormatArk()
 	gosdk.Api.PostDirectMessage(gosdk.Ctx, d.directMsg, &dto.MessageToCreate{MsgID: d.MsgID, Ark: arkData})
 

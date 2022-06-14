@@ -13,4 +13,5 @@ type PluginParams struct {
 	PluginNameEn string         //触发的插件英文名
 	CoreContent  string         //核心词，全匹配就是全词；前缀匹配就去除前缀；后缀匹配就去除后缀；包含就是整个内容
 	Keyword      string         //触发到的关键词
+	GuilidAc     string         //有效的频道ID,私信就是srcGuildId,艾特就是GuildId
 }

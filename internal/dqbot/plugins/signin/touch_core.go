@@ -1,6 +1,9 @@
 package signin
 
-import "github.com/zhangdi168/dq-bot/internal/dqbot/pkg/plugin"
+import (
+	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/gosdk/dqchannel"
+	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/plugin"
+)
 
 func TouchFull1(DqApi plugin.PluginParams) {
 	DqApi.ReplyDirect.Text("运行到了方法全匹配触发1,提取到核心词：" + DqApi.CoreContent)
@@ -19,6 +22,8 @@ func TouchIn2(DqApi plugin.PluginParams) {
 }
 
 func TouchPre1(DqApi plugin.PluginParams) {
+	data, _ := dqchannel.GetGuildInfo(DqApi.GuilidAc)
+	println(data)
 	DqApi.ReplyDirect.Text("运行到了方法前缀触发1,提取到核心词：" + DqApi.CoreContent)
 }
 

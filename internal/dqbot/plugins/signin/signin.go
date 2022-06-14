@@ -1,6 +1,8 @@
 package signin
 
-import "github.com/zhangdi168/dq-bot/internal/dqbot/pkg/plugin"
+import (
+	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/plugin"
+)
 
 type Signin struct {
 }
@@ -27,6 +29,7 @@ func (m *Signin) KeywordsTouch() *plugin.Keyword {
 			{"查天气", TouchPre1},
 			{"查询天气", TouchPre2},
 			{"天气查询", func(DqApi plugin.PluginParams) {
+
 				DqApi.ReplyDirect.Text("私信回复前缀3")
 			}},
 		},

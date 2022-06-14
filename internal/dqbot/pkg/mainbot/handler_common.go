@@ -13,10 +13,13 @@ import (
 func CoreHandler(event *dto.WSPayload, data *dto.Message) {
 
 	var content string
+	var guildac string
 	if data.DirectMessage {
 		content = data.Content
+		guildac = data.SrcGuildID
 	} else {
 		content = data.Content[24:]
+		guildac = data.GuildID
 	}
 	data.Content = content
 
@@ -42,6 +45,7 @@ func CoreHandler(event *dto.WSPayload, data *dto.Message) {
 		ReplyAt:      dqAtReply,
 		ReplyDirect:  dqDirectReply,
 		PluginNameEn: PluginName,
+		GuilidAc:     guildac,
 	}
 
 	//匹配到插件了
@@ -56,7 +60,7 @@ func CoreHandler(event *dto.WSPayload, data *dto.Message) {
 			paramData.Keyword = keyword              //触发插件的关键词
 			words[KeywordIndex].TouchFunc(paramData) //调用触发方法
 		case enums.EnumsMatch().Pre:
-			words := plugin.KeywordsTouch().FullWords //关键词列表
+			words := plugin.KeywordsTouch().PreWords //关键词列表
 			keyword := words[KeywordIndex].Word
 			//构造参数并调用插件函数
 			paramData.CoreContent = strings.Replace(content, keyword, "", -1)

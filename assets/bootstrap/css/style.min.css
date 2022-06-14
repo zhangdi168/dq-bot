@@ -4301,3 +4301,8 @@ button.list-group-item:hover {
         white-space: nowrap;
     }
 }
+
+/*新增样式 dq-bot*/
+.form-item-label{
+    font-weight: bold;
+}

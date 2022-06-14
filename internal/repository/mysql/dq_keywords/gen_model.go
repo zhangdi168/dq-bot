@@ -10,9 +10,7 @@ type DqKeywords struct {
 	Sorted    int32     // 排序（越高越前面）
 	MatchType string    // 匹配类型:all=全匹配,pre=前缀包含,suf=后缀包含,in=包含
 	ReplyType string    // 回复消息类型:text=文本,embed=embed,link=链接文本,text_image=文本缩略图有,image=大图
-	TouchType string    // 触发类型:material=素材,plugin=插件
 	ReplyJson string    // 返回的json数据，match_type=material才有效
-	PluginId  int32     // 插件ID,match_type=plugin才有效
 	Remark    string    // 关键词备注
 	CreateAt  time.Time `gorm:"time"` // 创建时间
 	UpdateAt  time.Time `gorm:"time"` // 修改时间

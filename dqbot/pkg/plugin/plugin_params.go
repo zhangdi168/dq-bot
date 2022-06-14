@@ -2,7 +2,7 @@ package plugin
 
 import (
 	"github.com/tencent-connect/botgo/dto"
-	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/gosdk/reply"
+	"github.com/zhangdi168/dq-bot/dqbot/pkg/gosdk/reply"
 )
 
 // PluginParams 传给插件的参数

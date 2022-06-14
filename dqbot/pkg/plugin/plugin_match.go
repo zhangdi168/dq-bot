@@ -1,7 +1,7 @@
 package plugin
 
 import (
-	"github.com/zhangdi168/dq-bot/internal/dqbot/enums"
+	"github.com/zhangdi168/dq-bot/dqbot/enums"
 	"strings"
 )
 

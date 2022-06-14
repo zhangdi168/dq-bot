@@ -1,8 +1,8 @@
 package signin
 
 import (
-	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/gosdk/dqchannel"
-	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/plugin"
+	"github.com/zhangdi168/dq-bot/dqbot/pkg/gosdk/dqchannel"
+	"github.com/zhangdi168/dq-bot/dqbot/pkg/plugin"
 )
 
 func TouchFull1(DqApi plugin.PluginParams) {

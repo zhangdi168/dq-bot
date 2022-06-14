@@ -2,9 +2,9 @@ package mainbot
 
 import (
 	"github.com/tencent-connect/botgo/dto"
-	"github.com/zhangdi168/dq-bot/internal/dqbot/enums"
-	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/gosdk/reply"
-	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/plugin"
+	"github.com/zhangdi168/dq-bot/dqbot/enums"
+	reply2 "github.com/zhangdi168/dq-bot/dqbot/pkg/gosdk/reply"
+	plugin2 "github.com/zhangdi168/dq-bot/dqbot/pkg/plugin"
 	"github.com/zhangdi168/dq-bot/internal/services/sermessage"
 	"github.com/zhangdi168/dq-bot/internal/services/seruser"
 	"strings"
@@ -27,20 +27,20 @@ func CoreHandler(event *dto.WSPayload, data *dto.Message) {
 	go checkUser(data)   //开一个协程 检测用户是否存在
 
 	//创建群消息回复对象
-	dqAtReply := reply.NewReplyAtMessage(data.ChannelID, data.GuildID, data.ID, data.Author.ID)
-	var dqDirectReply reply.IDqReply
+	dqAtReply := reply2.NewReplyAtMessage(data.ChannelID, data.GuildID, data.ID, data.Author.ID)
+	var dqDirectReply reply2.IDqReply
 	//创建私信消息回复对象
 	if data.DirectMessage {
 		//私信
-		dqDirectReply = reply.NewDirectReply(data.SrcGuildID, data.Author.ID, data.ID)
+		dqDirectReply = reply2.NewDirectReply(data.SrcGuildID, data.Author.ID, data.ID)
 	} else {
 		//艾特
-		dqDirectReply = reply.NewDirectReply(data.GuildID, data.Author.ID, data.ID)
+		dqDirectReply = reply2.NewDirectReply(data.GuildID, data.Author.ID, data.ID)
 	}
 
-	PluginName, KeywordIndex, MatchType := plugin.Match(content)
+	PluginName, KeywordIndex, MatchType := plugin2.Match(content)
 	//构造传给插件的数据
-	paramData := plugin.PluginParams{
+	paramData := plugin2.PluginParams{
 		Origin:       (*dto.Message)(data),
 		ReplyAt:      dqAtReply,
 		ReplyDirect:  dqDirectReply,
@@ -50,7 +50,7 @@ func CoreHandler(event *dto.WSPayload, data *dto.Message) {
 
 	//匹配到插件了
 	if PluginName != "" {
-		plugin := plugin.Plugins[PluginName]
+		plugin := plugin2.Plugins[PluginName]
 		switch MatchType {
 		case enums.EnumsMatch().Full:
 			words := plugin.KeywordsTouch().FullWords //关键词列表

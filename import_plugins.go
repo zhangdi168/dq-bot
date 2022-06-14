@@ -1,5 +1,5 @@
 package main
 
 import (
-	_ "github.com/zhangdi168/dq-bot/internal/dqbot/plugins/signin" //签到插件
+	_ "github.com/zhangdi168/dq-bot/dqbot/plugins/signin" //签到插件
 )

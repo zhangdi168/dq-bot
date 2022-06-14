@@ -7,7 +7,7 @@ import (
 	"github.com/tencent-connect/botgo/openapi"
 	"github.com/tencent-connect/botgo/token"
 	"github.com/tencent-connect/botgo/websocket"
-	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/gosdk"
+	"github.com/zhangdi168/dq-bot/dqbot/pkg/gosdk"
 	"os"
 )
 
@@ -33,4 +33,5 @@ func EntryInit() {
 	intent := websocket.RegisterHandlers(atMessage, directMessage, deleteMessage) // 注册socket消息处理
 
 	botgo.NewSessionManager().Start(ws, botToken, &intent) // 启动socket监听
+
 }

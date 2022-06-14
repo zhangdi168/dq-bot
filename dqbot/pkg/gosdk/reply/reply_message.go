@@ -2,7 +2,7 @@ package reply
 
 import (
 	"github.com/tencent-connect/botgo/dto"
-	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/gosdk"
+	"github.com/zhangdi168/dq-bot/dqbot/pkg/gosdk"
 )
 
 // DqReplyAtMessage DqReplyGroup 群聊@消息回复

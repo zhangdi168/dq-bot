@@ -10,7 +10,57 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid p-t-15">
-                    这里写你的html代码·····{$site$}
+                <!--这里写添加对应的表单-->
+                    <div class="form-group">
+                        <label class="form-item-label">触发关键词:</label>
+                        <input type="text" class="form-control" maxlength="10" id="keyword" placeholder="请输入触发关键词">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-item-label">匹配类型:</label>
+                        <div>
+                            <label class="radio-inline">
+                                <input type="radio" name="MathType" id="optionsMathType1" value="full" checked> 全匹配
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="MathType" id="optionsMathType2"  value="pre"> 前缀
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="MathType" id="optionsMathType3"  value="suf"> 后缀
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="MathType" id="optionsMathType4"  value="in"> 后缀
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-item-label">回复类型:</label>
+                        <div>
+                            <label class="radio-inline">
+                                <input type="radio" name="ReplyType" id="optionsReplyType1" value="text" checked> 文本
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="ReplyType" id="optionsReplyType2"  value="ark23"> ark23
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="ReplyType" id="optionsReplyType3"  value="ark34"> ark34
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="ReplyType" id="optionsReplyType4"  value="embed"> embed
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-item-label">回复内容:</label>
+                        <textarea type="text" class="form-control" maxlength="10" id="reply_json" placeholder="请输入回复内容"> </textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-item-label">备注:</label>
+                        <input type="text" class="form-control" maxlength="10" id="remark" placeholder="请输入备注">
+                    </div>
+                    
+                <!--这里写添加对应的表单 end-->
                 </div>
             </div>
             <div class="modal-footer">

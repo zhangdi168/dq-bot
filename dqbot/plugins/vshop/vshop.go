@@ -1,14 +1,16 @@
 package vshop
 
-import "github.com/zhangdi168/dq-bot/internal/dqbot/pkg/plugin"
+import (
+	plugin2 "github.com/zhangdi168/dq-bot/dqbot/pkg/plugin"
+)
 
-var _ plugin.Plugin = (*vshop)(nil)
+var _ plugin2.Plugin = (*vshop)(nil)
 
 type vshop struct {
 }
 
-func (v vshop) Info() *plugin.PluginInfo {
-	return &plugin.PluginInfo{
+func (v vshop) Info() *plugin2.PluginInfo {
+	return &plugin2.PluginInfo{
 		NamaCn:    "",
 		NamaEn:    "",
 		Version:   "",
@@ -22,7 +24,7 @@ func (v vshop) Setup(config map[string]string) error {
 	panic("implement me")
 }
 
-func (v vshop) KeywordsTouch() *plugin.Keyword {
+func (v vshop) KeywordsTouch() *plugin2.Keyword {
 	//TODO implement me
 	panic("implement me")
 }

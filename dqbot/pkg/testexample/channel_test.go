@@ -1,7 +1,7 @@
 package testexample
 
 import (
-	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/gosdk/dqchannel"
+	"github.com/zhangdi168/dq-bot/dqbot/pkg/gosdk/dqchannel"
 	"testing"
 )
 

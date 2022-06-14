@@ -3,11 +3,11 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/zhangdi168/dq-bot/dqbot/mainbot"
 	"net/http"
 	"time"
 
 	"github.com/zhangdi168/dq-bot/configs"
-	"github.com/zhangdi168/dq-bot/internal/dqbot/pkg/mainbot"
 	"github.com/zhangdi168/dq-bot/internal/router"
 	"github.com/zhangdi168/dq-bot/pkg/env"
 	"github.com/zhangdi168/dq-bot/pkg/logger"

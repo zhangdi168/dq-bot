@@ -1,17 +1,8 @@
 {{define "keywords/pop_add"}}
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/iview/dist/iview.min.js">
-</script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iview/dist/styles/iview.css">
-
-<script src="/assets/bootstrap/js/form/form-create.js">
-</script>
-
 <!-- 模态框（Modal） -->
-<div class="modal fade"id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog"  >
-        <div class="modal-content"  style="width: 600px"  >
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
             <div class="modal-header">
 
                 <h4 class="modal-title" id="myModalLabel" style="text-align: center">添加</h4>
@@ -19,9 +10,59 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid p-t-15">
-                <!--这里写添加对应的表单-->
-                    <form-create :rule="rule" />
-                <!--这里写添加对应的表单 end-->
+                    <!--这里写添加对应的表单-->
+                    <div class="form-group">
+                        <label class="form-item-label">触发关键词:</label>
+                        <input type="text" class="form-control" maxlength="10" id="keyword" placeholder="请输入触发关键词">
+                    </div>
+                    {{.text }}
+                    {{.radio }}
+                    {{.textarea }}
+                    <div class="form-group">
+                        <label class="form-item-label">匹配类型:</label>
+                        <div>
+                            <label class="radio-inline">
+                                <input type="radio" name="MathType" id="optionsMathType1" value="full" checked> 全匹配
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="MathType" id="optionsMathType2"  value="pre"> 前缀
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="MathType" id="optionsMathType3"  value="suf"> 后缀
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="MathType" id="optionsMathType4"  value="in"> 后缀
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-item-label">回复类型:</label>
+                        <div>
+                            <label class="radio-inline">
+                                <input type="radio" name="ReplyType" id="optionsReplyType1" value="text" checked> 文本
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="ReplyType" id="optionsReplyType2"  value="ark23"> ark23
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="ReplyType" id="optionsReplyType3"  value="ark34"> ark34
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="ReplyType" id="optionsReplyType4"  value="embed"> embed
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-item-label">回复内容:</label>
+                        <textarea type="text" class="form-control" maxlength="10" id="reply_json" placeholder="请输入回复内容"> </textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-item-label">备注:</label>
+                        <input type="text" class="form-control" maxlength="10" id="remark" placeholder="请输入备注">
+                    </div>
+                    <!--这里写添加对应的表单 end-->
                 </div>
             </div>
             <div class="modal-footer">
@@ -38,36 +79,10 @@
         data: {
             site: "菜鸟教程11122",
             url: "www.runoob.com",
-            alexa: "10000",
-            fApi: {},
-            model: {},
-            rule: formCreate.parseJson('[{"type":"input","field":"5iz5v884dbtf","title":"输入框","info":"","_fc_drag_tag":"input","hidden":false,"display":true,"validate":[{"trigger":"change","mode":"required","message":"","required":true,"type":"url"}]},{"type":"radio","field":"jig1moa97rsuo","title":"单选框","info":"","effect":{"fetch":""},"options":[{"value":"1","label":"选项1"},{"value":"2","label":"选项2"}],"_fc_drag_tag":"radio","hidden":false,"display":true},{"type":"switch","field":"n4s1moa97votn","title":"开关","info":"","_fc_drag_tag":"switch","hidden":false,"display":true},{"type":"slider","field":"gn31moa97yt8y","title":"滑块","info":"","_fc_drag_tag":"slider","hidden":false,"display":true,"value":0},{"type":"datePicker","field":"69f1moa981oc5","title":"日期选择器","info":"","_fc_drag_tag":"datePicker","hidden":false,"display":true},{"type":"radio","field":"60j1moa98z1np","title":"单选框","info":"","effect":{"fetch":""},"options":[{"value":"1","label":"选项1"},{"value":"2","label":"选项2"}],"_fc_drag_tag":"radio","hidden":false,"display":true},{"type":"colorPicker","field":"wno1moa984yh0","title":"颜色选择器","info":"","_fc_drag_tag":"colorPicker","hidden":false,"display":true},{"type":"fc-editor","field":"f881moa9883cz","title":"富文本框","info":"","_fc_drag_tag":"fc-editor","hidden":false,"display":true},{"type":"upload","field":"c441moa98gb1i","title":"上传","info":"","props":{"action":"","onSuccess":"[[FORM-CREATE-PREFIX-function(e,t){t.url=e.data.url}-FORM-CREATE-SUFFIX]]"},"_fc_drag_tag":"upload","hidden":false,"display":true},{"type":"span","title":"文字","native":false,"children":["这是一段文字"],"_fc_drag_tag":"span","hidden":false,"display":true},{"type":"el-divider","wrap":{"show":false},"native":false,"children":[""],"_fc_drag_tag":"el-divider","hidden":false,"display":true},{"type":"rate","field":"tup1moa99ok9c","title":"评分","info":"","_fc_drag_tag":"rate","hidden":false,"display":true,"value":0}]'),
-            option: formCreate.parseJson('{"form":{"labelPosition":"left","size":"small","labelWidth":"125px","hideRequiredAsterisk":false,"showMessage":true,"inlineMessage":false},"submitBtn":true,"resetBtn":false}')
+            alexa: "10000"
         },
-        // mounted: function () {
-        //     //表单插入的节点
-        //     const root = document.getElementById('form-create')
-        //     //fApi为表单api
-        //     this.fApi = this.$formCreate(
-        //         //表单生成规则
-        //         [
-        //             this.$formCreate.maker.input('商品名称', 'goods_name'),
-        //             this.$formCreate.maker.date('创建时间', 'created_at'),
-        //
-        //
-        //         ],
-        //         //组件参数配置
-        //         {
-        //             el: root,
-        //             //表单提交事件
-        //             onSubmit: function (formData, fApi) {
-        //
-        //             }
-        //         })
-        // },
         methods: {
             details: function() {
-                this.fApi.btn.loading()
                 console.log(this.site + " - 学的不仅是技术，更是梦想！");
                 AjaxForm(
                     "POST",

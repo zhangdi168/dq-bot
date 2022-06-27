@@ -51,7 +51,7 @@ func CoreHandler(event *dto.WSPayload, data *dto.Message) {
 		dqDirectReply = reply2.NewDirectReply(data.GuildID, data.Author.ID, data.ID)
 	}
 
-	PluginName, KeywordIndex, MatchType := plugin2.Match(content)
+	PluginName, KeywordIndex, MatchType := plugin2.Match(strings.TrimSpace(content))
 	//构造传给插件的数据
 	paramData := plugin2.PluginParams{
 		Origin:       (*dto.Message)(data),

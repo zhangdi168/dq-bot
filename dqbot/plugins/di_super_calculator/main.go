@@ -10,7 +10,7 @@ type SuperCalculator struct {
 func (m *SuperCalculator) Info() *plugin2.PluginInfo {
 	return &plugin2.PluginInfo{
 		NamaCn:    "超级计算器",
-		NamaEn:    "super_",
+		NamaEn:    "super_calculator",
 		Version:   "1.0",
 		Author:    "zhangdi",
 		Introduce: "超级计算器",

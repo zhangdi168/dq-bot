@@ -1,11 +1,5 @@
 package env
 
-import (
-	"flag"
-	"fmt"
-	"strings"
-)
-
 var (
 	active Environment
 	dev    Environment = &environment{value: "dev"}
@@ -53,22 +47,23 @@ func (e *environment) IsPro() bool {
 func (e *environment) t() {}
 
 func init() {
-	env := flag.String("env", "", "请输入运行环境:\n dev:开发环境\n fat:测试环境\n uat:预上线环境\n pro:正式环境\n")
-	flag.Parse()
-
-	switch strings.ToLower(strings.TrimSpace(*env)) {
-	case "dev":
-		active = dev
-	case "fat":
-		active = fat
-	case "uat":
-		active = uat
-	case "pro":
-		active = pro
-	default:
-		active = fat
-		fmt.Println("Warning: '-env' cannot be found, or it is illegal. The default 'fat' will be used.")
-	}
+	active = fat
+	//env := flag.String("env", "", "请输入运行环境:\n dev:开发环境\n fat:测试环境\n uat:预上线环境\n pro:正式环境\n")
+	//flag.Parse()
+	//
+	//switch strings.ToLower(strings.TrimSpace(*env)) {
+	//case "dev":
+	//	active = dev
+	//case "fat":
+	//	active = fat
+	//case "uat":
+	//	active = uat
+	//case "pro":
+	//	active = pro
+	//default:
+	//	active = fat
+	//	fmt.Println("Warning: '-env' cannot be found, or it is illegal. The default 'fat' will be used.")
+	//}
 }
 
 // Active 当前配置的env

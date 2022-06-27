@@ -61,7 +61,8 @@ func matchPre(content string) (string, int) {
 			continue
 		}
 		for i, match := range words {
-			if strings.HasPrefix(content, match.Word) {
+			isHas := strings.HasPrefix(content, match.Word)
+			if isHas {
 				return pluginName, i
 			}
 		}

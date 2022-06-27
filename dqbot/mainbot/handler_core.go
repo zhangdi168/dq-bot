@@ -7,6 +7,7 @@ import (
 	plugin2 "github.com/zhangdi168/dq-bot/dqbot/pkg/plugin"
 	"github.com/zhangdi168/dq-bot/internal/services/sermessage"
 	"github.com/zhangdi168/dq-bot/internal/services/seruser"
+	"regexp"
 	"strings"
 )
 
@@ -14,13 +15,25 @@ func CoreHandler(event *dto.WSPayload, data *dto.Message) {
 
 	var content string
 	var guildac string
-	if data.DirectMessage {
+
+	//正则匹配
+	rex := regexp.MustCompile(`<@+(.+)>+`)
+	out := rex.FindAllStringSubmatch(data.Content, -1)
+
+	for _, i := range out {
+		//botid :=i[1] //机器人ID  <@!3447550723496396889>中的3447550723496396889
+		content = strings.ReplaceAll(data.Content, i[0], "") //将 <@!3447550723496396889> 删除掉
+	}
+	if content == "" {
 		content = data.Content
+	}
+
+	if data.DirectMessage {
 		guildac = data.SrcGuildID
 	} else {
-		content = data.Content[24:]
 		guildac = data.GuildID
 	}
+
 	data.Content = content
 
 	go messageSave(data) //开一个协程保存消息

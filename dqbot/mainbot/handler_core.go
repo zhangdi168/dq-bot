@@ -24,6 +24,7 @@ func CoreHandler(event *dto.WSPayload, data *dto.Message) {
 		//botid :=i[1] //机器人ID  <@!3447550723496396889>中的3447550723496396889
 		content = strings.ReplaceAll(data.Content, i[0], "") //将 <@!3447550723496396889> 删除掉
 	}
+
 	if content == "" {
 		content = data.Content
 	}

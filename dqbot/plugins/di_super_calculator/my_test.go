@@ -20,18 +20,19 @@ const (
 )
 
 // 将秒转换成具体的天数、时、分钟数
-func resolveTime(seconds int) (day int, hour int, minute int) {
+func resolveTime(seconds int) (day int, hour int, minute int, second int) {
+	second = ((seconds % 86400) % 3600) % 60
 	//每分钟秒数
-	minute = seconds / SecondsPerMinute
+	minute = ((seconds % 86400) % 3600) / SecondsPerMinute
 	//每小时秒数
-	hour = seconds / SecondsPerHour
+	hour = (seconds % 86400) / SecondsPerHour
 	//每天秒数
 	day = seconds / SecondsPerDay
 	return
 }
 
 func TestTimes(t *testing.T) {
-	str := "2022-06-28 04:40:05"
+	str := "2022-06-28 18:00:00"
 	t1, _ := time.ParseInLocation("2006-01-02 15:04:05", str, time.Local)
 
 	now := time.Now()

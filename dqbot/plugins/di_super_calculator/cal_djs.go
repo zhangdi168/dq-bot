@@ -17,6 +17,7 @@ func calDjs(dqApi plugin.PluginParams) {
 		`请按以下日期格式艾特本机器人：
 ⭐18点（默认今日18点）
 ⭐18点52分 （默认今日）
+⭐7月    （默认当前年7月1日）
 ⭐17日    （默认本月17日）
 ⭐7月4日（默认今年7月4日）
 ⭐2025-06-29
@@ -60,8 +61,10 @@ func computeDjs(content string) string {
 	year := now.Year()
 	month := int(now.Month())
 	day := now.Day()
-	hour := now.Hour()
-	min := now.Minute()
+	//hour := now.Hour()
+	hour := "0"
+	//min := now.Minute()
+	min := "0"
 	sec := "0"
 	var t1 time.Time
 
@@ -78,9 +81,15 @@ func computeDjs(content string) string {
 	//⭐17日    （默认本月17日）
 	//⭐7月4日（默认今年7月4日）
 	tempMonth, tempDay := parseDay(content)
-	if tempMonth != "" {
+	if tempDay != "" || tempMonth != "" {
+		dateStr := ""
+		if tempMonth == "" {
+			dateStr = fmt.Sprintf("%v-%02v-%02v %02v:%02v:%02v", year, month, tempDay, hour, min, sec)
+		} else {
+			dateStr = fmt.Sprintf("%v-%02v-%02v %02v:%02v:%02v", year, tempMonth, tempDay, hour, min, sec)
+		}
 		//%02v %02d表示不足两位前面补0
-		dateStr := fmt.Sprintf("%v-%02v-%02v %02v:%02v:%02v", year, tempMonth, tempDay, hour, min, sec)
+
 		t1, _ = time.ParseInLocation("2006-01-02 15:04:05", dateStr, time.Local)
 		return getSubTime(t1)
 	}
@@ -122,18 +131,23 @@ func parseHour(content string) (string, string) {
 	return "", ""
 }
 func parseDay(content string) (string, string) {
-	rex := regexp.MustCompile(`(\d+)月(\d*)日?`)
+	rex := regexp.MustCompile(`(\d*)月?(\d*)日?`)
 	out := rex.FindAllStringSubmatch(content, -1)
 	if len(out) > 0 {
 		words := out[0]
 		month := ""
 		day := ""
-		if words[1] != "" {
+		if words[1] != "" && strings.Contains(words[0], "月") {
 			month = words[1]
+		} else if words[1] != "" && strings.Contains(words[0], "日") {
+			day = words[1]
+
+			return "", day
 		} else {
 			return "", ""
 		}
-		if words[2] != "" {
+
+		if words[2] != "" && strings.Contains(words[0], "日") {
 			day = words[2]
 		} else {
 			day = "1"
